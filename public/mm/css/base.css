@@ -1,3 +1,24 @@
-header {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+.my-header {
   background-color: #ee2322;
+}
+.my-header > h1 {
+  color: #fff;
+}
+.my-header > a {
+  color: #fff;
+}
+.my-footer {
+  background-color: #ee2322;
+}
+.my-footer > a.mui-active span {
+  color: skyblue;
+}
+.my-footer > a > span {
+  color: #fff;
 }
