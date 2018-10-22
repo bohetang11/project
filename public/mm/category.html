@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/category.css">
     <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="js/category.js"></script>
 </head>
 
 <body>
     <header class="mui-bar mui-bar-nav my-header">
-        <h1 class="mui-title">云购</h1>
+        <h1 class="mui-title">分类</h1>
         <a class="mui-icon mui-icon-search mui-pull-right"></a>
     </header>
     <nav class="mui-bar mui-bar-tab my-footer">
@@ -38,13 +40,55 @@
     </nav>
     <div class="my-content">
         <div class="category-left">
-
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="links" id="links">
+                        <!-- <a href="javascript:;" class="active">
+                            生活馆
+                        </a> -->
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="category-right">
-
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="mui-clearfix" id="lists">
+                        <!-- <li>
+                            <a href="javascript:;">
+                                <img src="images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </div>
+
+    <script src="assets/artTemplate/template-web.js"></script>
+    <script type="text/template" id="category-first">
+        {{each result}}
+        <a href="javascript:;" data-id="{{$value.id}}">{{$value.categoryName}}</a>
+        {{/each}}
+    </script>
+    <script type="text/template" id="category-second">
+        {{each result}}
+        <li>
+            <a href="javascript:;">
+                <img src="{{$value.brandLogo}}" alt="">
+                <p>{{$value.brandName}}</p>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <script>
+        mui('.my-footer').on('tap', 'a', function () {
+			window.location.href = this.href; 
+		})
+    </script>
+
 </body>
 
 </html>

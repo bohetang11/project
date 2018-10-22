@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <script src="assets/mui/js/mui.min.js"></script>
+</head>
+
+<body>
+    <div class="mui-slider">
+        <div class="mui-slider-group mui-slider-loop">
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/banner4.png" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="images/banner1.png" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="images/banner2.png" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="images/banner3.png" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="images/banner4.png" /></a></div>
+            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/banner1.png" /></a></div>
+        </div>
+        <div class="mui-slider-indicator">
+            <div class="mui-indicator mui-active"></div>
+            <div class="mui-indicator"></div>
+            <div class="mui-indicator"></div>
+            <div class="mui-indicator"></div>
+        </div>
+    </div>
+
+    </div>
+    <script>
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval: 500 //自动轮播周期，若为0则不自动播放，默认为0；
+        });
+    </script>
+</body>
+
+</html>
