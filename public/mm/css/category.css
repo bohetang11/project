@@ -5,11 +5,51 @@
   bottom: 50px;
   left: 0;
   display: flex;
+  background-color: #eee;
 }
 .my-content .category-left {
   width: 80px;
+  position: relative;
+}
+.my-content .category-left .links {
+  background-color: #fff;
+}
+.my-content .category-left .links a {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.my-content .category-left .links a.active {
+  border-right: none;
+  background-color: #eee;
 }
 .my-content .category-right {
   flex: 1;
-  background-color: blue;
+  position: relative;
+}
+.my-content .category-right > div {
+  padding-left: 10px;
+}
+.my-content .category-right > div ul {
+  margin-top: 10px;
+  background-color: #fff;
+}
+.my-content .category-right > div ul li {
+  width: 33.33%;
+  float: left;
+}
+.my-content .category-right > div ul li a {
+  display: block;
+}
+.my-content .category-right > div ul li a img {
+  width: 100%;
+  display: block;
+}
+.my-content .category-right > div ul li a p {
+  text-align: center;
 }

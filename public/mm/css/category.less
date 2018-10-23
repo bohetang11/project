@@ -5,11 +5,53 @@
     bottom: 50px;
     left: 0;
     display: flex;
+    background-color: #eee;
     .category-left{
         width: 80px;
+        position: relative;
+        .links{
+            background-color: #fff;
+            a{
+                display: block;
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+                font-size: 14px;
+                color: #000;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                &.active{
+                    border-right: none;
+                    background-color: #eee;
+                }
+            }
+        }
     }
     .category-right{
         flex: 1;
-        background-color: blue;
+        position: relative;
+        // background-color: blue;
+        >div{
+            padding-left: 10px;
+            ul{
+                margin-top: 10px;
+                background-color: #fff;
+                li{
+                    width: 33.33%;
+                    float: left;
+                    a{
+                        display: block;
+                        img{
+                            width: 100%;
+                            display: block;
+                        }
+                        p{
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

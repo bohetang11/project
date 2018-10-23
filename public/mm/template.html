@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
-    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/base.css">
 	<script src="assets/mui/js/mui.min.js"></script>
 </head>
+
 <body>
-    <header class="mui-bar mui-bar-nav my-header">
+	<header class="mui-bar mui-bar-nav my-header">
 		<h1 class="mui-title">云购</h1>
 		<a class="mui-icon mui-icon-search mui-pull-right"></a>
 	</header>
@@ -34,7 +36,14 @@
 		</a>
 	</nav>
 	<div class="mui-content">
-		
+
 	</div>
+
+	<script>
+		mui('.my-footer').on('tap', 'a', function () {
+			window.location.href = this.href;
+		})
+	</script>
 </body>
+
 </html>
