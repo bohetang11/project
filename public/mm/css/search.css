@@ -1,0 +1,46 @@
+.mui-content {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.mui-content .container {
+  padding: 10px;
+}
+.mui-content .container .search {
+  position: relative;
+}
+.mui-content .container .search input:first-of-type {
+  width: 100%;
+  height: 30px;
+  border-radius: 0;
+  border: 1px solid #ee2322;
+  font-size: 14px;
+}
+.mui-content .container .search input:last-of-type {
+  width: 60px;
+  height: 30px;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ee2322;
+  border: none;
+  color: #fff;
+}
+.mui-content .container .history {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+.mui-content .container .history span:first-of-type {
+  float: left;
+}
+.mui-content .container .history .mui-icon-trash:before {
+  font-size: 14px;
+}
+.mui-content .container .history span:last-of-type {
+  float: right;
+  font-size: 14px;
+  line-height: normal;
+}
