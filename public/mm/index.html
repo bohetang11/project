@@ -324,6 +324,7 @@
 
 		mui('.my-footer').on('tap', 'a', function () {
 			window.location.href = this.href;
+            $(this).addClass('active').siblings().removeClass('active');
 		})
 	</script>
 </body>

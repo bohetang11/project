@@ -1,0 +1,25 @@
+.mui-content {
+  background-color: #fff;
+}
+.mui-content .filter {
+  width: 100%;
+  padding: 10px 15px 0;
+}
+.mui-content .filter span {
+  height: 35px;
+  line-height: 35px;
+  display: inline-block;
+  width: 50%;
+  background-color: #ccc;
+  float: left;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+}
+.mui-content .filter .mui-icon-arrowdown:before {
+  position: absolute;
+  right: 50%;
+  top: 0;
+  transform: translateX(190%);
+  font-size: 14px;
+}
