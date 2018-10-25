@@ -12,15 +12,18 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/search-result.css">
     <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/search-result.js"></script>
 </head>
 
 <body>
     <header class="mui-bar mui-bar-nav my-header">
         <h1 class="mui-title">云购</h1>
-        <a class="mui-icon mui-icon-search mui-pull-right"></a>
+        <!-- <a class="mui-icon mui-icon-search mui-pull-right"></a> -->
     </header>
     <nav class="mui-bar mui-bar-tab my-footer">
-        <a class="mui-tab-item mui-active" href="index.html">
+        <a class="mui-tab-item" href="index.html">
             <span class="mui-icon mui-icon-home"></span>
             <span class="mui-tab-label">首页</span>
         </a>
@@ -37,66 +40,47 @@
             <span class="mui-tab-label">会员中心</span>
         </a>
     </nav>
-    <div class="mui-content">
-        <div class="filter mui-clearfix">     
-            <span class="mui-icon mui-icon-arrowdown">价格</span>
-            <span class="mui-icon mui-icon-arrowdown">销量</span>
-        </div>
-        <div class="product mui-clearfix">
-            <ul class="mui-clearfix">
-                <li>
-                    <a href="javascript:;">
-                        <img src="images/product.jpg" alt="">
-                        <span>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span>&yen;560</span>
-                            <del>888</del>
-                        </p>
-                        <div>立即购买</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="images/product.jpg" alt="">
-                        <span>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span>&yen;560</span>
-                            <del>&yen;888</del>
-                        </p>
-                        <div>立即购买</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="images/product.jpg" alt="">
-                        <span>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span>&yen;560</span>
-                            <del>888</del>
-                        </p>
-                        <div>立即购买</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="images/product.jpg" alt="">
-                        <span>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span>&yen;560</span>
-                            <del>&yen;888</del>
-                        </p>
-                        <div>立即购买</div>
-                    </a>
-                </li>
-            </ul>
+    <div class="mui-content" id="refreshContainer">
+        <div>
+            <div class="filter mui-clearfix">
+                <span class="mui-icon mui-icon-arrowdown" id="priceSort">价格</span>
+                <span class="mui-icon mui-icon-arrowdown" id="numSort">销量</span>
+            </div>
+            <div class="product mui-clearfix">
+                <ul class="mui-clearfix" id="search-box">
+                    <!-- <li>
+                        <a href="javascript:;">
+                            <img src="images/product.jpg" alt="">
+                            <span>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
+                            <p>
+                                <span>&yen;560</span>
+                                <del>888</del>
+                            </p>
+                            <div>立即购买</div>
+                        </a>
+                    </li> -->
+    
+                </ul>
+            </div>
         </div>
 
     </div>
 
-    <script>
-        mui('.my-footer').on('tap', 'a', function () {
-            window.location.href = this.href;
-        })
+    <script src="assets/artTemplate/template-web.js"></script>
+    <script type="text/template" id="searchTpl">
+        {{each data}}
+            <li>
+                <a href="javascript:;">
+                    <img src="{{$value.pic[0].picAddr}}" alt="">
+                    <span>{{$value.proName}}</span>
+                    <p>
+                        <span>&yen;{{$value.price}}</span>
+                        <span>&yen;{{$value.oldPrice}}</span>
+                    </p>
+                    <div>立即购买</div>
+                </a>
+            </li>
+        {{/each}}
     </script>
 </body>
 

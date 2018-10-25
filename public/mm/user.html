@@ -9,16 +9,24 @@
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/search.css">
     <script src="assets/mui/js/mui.min.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
-    <script src="js/search.js"></script>
     <script src="js/public.js"></script>
+
+    <style>
+        #content{
+            margin-top: 0;
+            font-size: 14px;
+        }
+        #content li:last-of-type{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <header class="mui-bar mui-bar-nav my-header">
-        <h1 class="mui-title">搜索</h1>
+        <h1 class="mui-title">会员中心</h1>
         <!-- <a class="mui-icon mui-icon-search mui-pull-right"></a> -->
     </header>
     <nav class="mui-bar mui-bar-tab my-footer">
@@ -34,33 +42,28 @@
             <span class="mui-icon fa fa-shopping-cart"></span>
             <span class="mui-tab-label">购物车</span>
         </a>
-        <a class="mui-tab-item" href="user.html">
+        <a class="mui-tab-item  mui-active" href="user.html">
             <span class="mui-icon mui-icon-person"></span>
             <span class="mui-tab-label">会员中心</span>
         </a>
     </nav>
     <div class="mui-content">
-        <div class="container">
-            <div class="search">
-                <input type="text" placeholder="搜索您喜欢的商品">
-                <input type="button" value="搜索" id="search">
-            </div>
-            <div class="history mui-clearfix">
-                <span>搜索历史</span>
-                <span class="mui-icon mui-icon-trash" id="clear">清空历史</span>
-            </div>
-            <ul class="mui-table-view" id="history-box">
-                <!-- <li class="mui-table-view-cell">Item 1</li> -->
-            </ul>
-        </div>
+        <ul class="mui-table-view" id="content">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">修改密码</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">我的购物车</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">收货地址管理</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">退出登录</a>
+            </li>
+        </ul>
     </div>
 
-    <script src="assets/artTemplate/template-web.js"></script>
-    <script type="text/template" id="historyTpl">
-        {{each result}}
-        <li class="mui-table-view-cell">{{$value}}</li>
-        {{/each}}
-    </script>
 </body>
 
 </html>
