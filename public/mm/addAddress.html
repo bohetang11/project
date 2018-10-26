@@ -9,17 +9,27 @@
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="assets/mui/css/mui.picker.css">
+    <link rel="stylesheet" href="assets/mui/css/mui.poppicker.css">
     <script src="assets/mui/js/mui.min.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
     <script src="js/public.js"></script>
-    <script src="js/user.js"></script>
+    <script src="assets/mui/js/mui.picker.js"></script>
+    <script src="assets/mui/js/mui.poppicker.js"></script>
+    <script src="js/city.js"></script>
+    <script src="js/addAddress.js"></script>
 
+    <style>
+        #revise-btn{
+            background-color: #ee2322;
+            border: 1px solid #ee2322;
+        }
+    </style>
 </head>
 
 <body>
     <header class="mui-bar mui-bar-nav my-header">
-        <h1 class="mui-title">会员中心</h1>
+        <h1 class="mui-title">添加收货地址</h1>
         <!-- <a class="mui-icon mui-icon-search mui-pull-right"></a> -->
     </header>
     <nav class="mui-bar mui-bar-tab my-footer">
@@ -35,41 +45,31 @@
             <span class="mui-icon fa fa-shopping-cart"></span>
             <span class="mui-tab-label">购物车</span>
         </a>
-        <a class="mui-tab-item  mui-active" href="user.html">
+        <a class="mui-tab-item mui-active" href="user.html">
             <span class="mui-icon mui-icon-person"></span>
             <span class="mui-tab-label">会员中心</span>
         </a>
     </nav>
     <div class="mui-content">
-        <div class="userinfo">
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <input type="text" class="mui-input-clear" placeholder="请输入收货人姓名" name="username">
+            </div>
+            <div class="mui-input-row">
+                <input type="text" class="mui-input-clear" placeholder="请输入邮政编码" name="postCode">
+            </div>
+            <div class="mui-input-row">
+                <input type="text" id="selectcity" class="mui-input-clear" placeholder="请选择省市区" name="city" readonly>
+            </div>
+            <div class="mui-input-row">
+                <input type="text" class="mui-input-clear" placeholder="请输入详细地址" name="detail">
+            </div>
 
-        </div>
-        <ul class="mui-table-view" id="content">
-            <li class="mui-table-view-cell">
-                <a href="modify.html" class="mui-navigate-right">修改密码</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a class="mui-navigate-right">我的购物车</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a href="address.html" class="mui-navigate-right">收货地址管理</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a href="javascript:;" class="mui-navigate-right" id="logout">退出登录</a>
-            </li>
-        </ul>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary" id="revise-btn">确认</button>
+            </div>
+        </form>
     </div>
-
-    <script src="assets/artTemplate/template-web.js"></script>
-    <script type="text/template" id="usertpl">
-        <div>
-                <img src="images/user.jpg" alt="">
-            </div>
-            <div>
-                <p>{{mobile}}</p>
-                <p>账号:{{username}}</p>
-            </div>
-    </script>
 
 </body>
 

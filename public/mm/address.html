@@ -9,17 +9,33 @@
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/user.css">
     <script src="assets/mui/js/mui.min.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
     <script src="js/public.js"></script>
-    <script src="js/user.js"></script>
+    <script src="js/address.js"></script>
 
+    <style>
+        body{
+            background-color: #fff;
+        }
+        .mui-content{
+            background-color: #fff;
+        }
+        .addAddress {
+			display: block;
+			width: 100%;
+			padding: 10px 0;
+			text-align: center;
+            font-size: 14px;
+            color: #000;
+            border-bottom: 1px solid #ccc;
+		}
+    </style>
 </head>
 
 <body>
     <header class="mui-bar mui-bar-nav my-header">
-        <h1 class="mui-title">会员中心</h1>
+        <h1 class="mui-title">收货地址列表</h1>
         <!-- <a class="mui-icon mui-icon-search mui-pull-right"></a> -->
     </header>
     <nav class="mui-bar mui-bar-tab my-footer">
@@ -35,42 +51,38 @@
             <span class="mui-icon fa fa-shopping-cart"></span>
             <span class="mui-tab-label">购物车</span>
         </a>
-        <a class="mui-tab-item  mui-active" href="user.html">
+        <a class="mui-tab-item mui-active" href="user.html">
             <span class="mui-icon mui-icon-person"></span>
             <span class="mui-tab-label">会员中心</span>
         </a>
     </nav>
     <div class="mui-content">
-        <div class="userinfo">
+        <a href="addAddress.html" class="addAddress">添加收货地址</a>
+        <ul class="mui-table-view" id="address-box">
 
-        </div>
-        <ul class="mui-table-view" id="content">
-            <li class="mui-table-view-cell">
-                <a href="modify.html" class="mui-navigate-right">修改密码</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a class="mui-navigate-right">我的购物车</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a href="address.html" class="mui-navigate-right">收货地址管理</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a href="javascript:;" class="mui-navigate-right" id="logout">退出登录</a>
-            </li>
         </ul>
     </div>
 
     <script src="assets/artTemplate/template-web.js"></script>
-    <script type="text/template" id="usertpl">
-        <div>
-                <img src="images/user.jpg" alt="">
-            </div>
-            <div>
-                <p>{{mobile}}</p>
-                <p>账号:{{username}}</p>
-            </div>
+    <script type="text/template" id="addressTpl">
+        {{each result}}
+            <li class="mui-table-view-cell mui-media">
+               <div class="mui-slider-right mui-disabled">
+                    <a class="mui-btn mui-btn-blue edit-btn"
+                        data-id="{{$value.id}}">编辑</a>
+                    <a href="javascript:;"
+                        class="mui-btn mui-btn-red delete-btn"
+                        data-id="{{$value.id}}">删除</a>
+                </div>
+                <div class="mui-media-body mui-slider-handle">
+                       邮编：{{$value.postCode}} 收货人：{{$value.recipients}} 
+                    <p class='mui-ellipsis'>
+                        {{$value.address}} {{$value.addressDetail}}
+                    </p>
+                </div>
+            </li>
+        {{/each}}
     </script>
-
 </body>
 
 </html>
