@@ -27,6 +27,7 @@ $(function(){
                     },2000);
                 }else{
                     mui.toast('输入有误,请重新输入');
+                    $('#login-btn').html("登录");
                 }
             }
         })
