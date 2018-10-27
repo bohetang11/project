@@ -70,7 +70,7 @@
     <script type="text/template" id="searchTpl">
         {{each data}}
             <li>
-                <a href="javascript:;">
+                <a href="product-detail.html?id={{$value.id}}">
                     <img src="{{$value.pic[0].picAddr}}" alt="">
                     <span>{{$value.proName}}</span>
                     <p>
